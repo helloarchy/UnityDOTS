@@ -40,10 +40,10 @@ namespace MonoBehaviours
                     Value = position
                 });
 
-                /*entityManager.SetComponentData(instance, new Destination
+                entityManager.SetComponentData(instance, new Destination
                 {
-                    value = position
-                });*/
+                    Value = position
+                });
 
                 var speed = Random.Range(moveSpeedRange.x, moveSpeedRange.y);
                 entityManager.SetComponentData(instance, new MovementSpeed

@@ -19,16 +19,16 @@ namespace Systems
                 in MovementSpeed movementSpeed) =>
             {
                 // Return early if we're already at the destination
-                if (math.all(destination.value == translation.Value)) return;
+                if (math.all(destination.Value == translation.Value)) return;
 
-                var toDestination = destination.value - translation.Value;
+                var toDestination = destination.Value - translation.Value;
                 rotation.Value = quaternion.LookRotation(toDestination, up);
 
                 /* Move towards destination with each frame. If movement goes beyond destination,
                  then only move to the destination.*/
                 var movement = math.normalize(toDestination) * movementSpeed.value * deltaTime;
                 if (math.length(movement) >= math.length(toDestination))
-                    translation.Value = destination.value;
+                    translation.Value = destination.Value;
                 else
                     translation.Value += movement;
             }).Schedule();

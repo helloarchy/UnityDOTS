@@ -6,6 +6,6 @@ namespace Components
     [GenerateAuthoringComponent]
     public struct Destination : IComponentData
     {
-        public float3 value;
+        public float3 Value;
     }
 }
