@@ -33,7 +33,7 @@ namespace MonoBehaviours
             for (var z = 0; z < gridSize; z++)
             {
                 var instance = entityManager.Instantiate(entity);
-                var position = new float3(x * spread, 0, z * spread);
+                var position = new float3(x * spread, 0.5f, z * spread);
 
                 entityManager.SetComponentData(instance, new Translation
                 {
