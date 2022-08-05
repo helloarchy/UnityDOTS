@@ -26,7 +26,7 @@ namespace Systems
 
                 /* Move towards destination with each frame. If movement goes beyond destination,
                  then only move to the destination.*/
-                var movement = math.normalize(toDestination) * movementSpeed.value * deltaTime;
+                var movement = math.normalize(toDestination) * movementSpeed.Value * deltaTime;
                 if (math.length(movement) >= math.length(toDestination))
                     translation.Value = destination.Value;
                 else

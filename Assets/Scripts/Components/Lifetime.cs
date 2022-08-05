@@ -3,7 +3,7 @@ using Unity.Entities;
 namespace Components
 {
     [GenerateAuthoringComponent]
-    public struct MovementSpeed : IComponentData
+    public struct Lifetime : IComponentData
     {
         public float Value;
     }
