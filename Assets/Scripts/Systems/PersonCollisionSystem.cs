@@ -10,16 +10,13 @@ using Random = Unity.Mathematics.Random;
 
 namespace Systems
 {
-    public class PersonCollisionSystem : SystemBase
+    // ReSharper disable once PartialTypeWithSinglePart
+    public partial class PersonCollisionSystem : SystemBase
     {
-        private BuildPhysicsWorld _buildPhysicsWorld;
         private StepPhysicsWorld _stepPhysicsWorld;
 
         protected override void OnCreate()
         {
-            // Get all systems built for the physics world
-            _buildPhysicsWorld = World.GetOrCreateSystem<BuildPhysicsWorld>();
-
             // Get all the modification physics (gravity, collisions, ...)
             _stepPhysicsWorld = World.GetOrCreateSystem<StepPhysicsWorld>();
         }
@@ -33,7 +30,6 @@ namespace Systems
                 seed = DateTimeOffset.Now.Millisecond
             }.Schedule(
                 _stepPhysicsWorld.Simulation,
-                ref _buildPhysicsWorld.PhysicsWorld,
                 Dependency);
         }
 

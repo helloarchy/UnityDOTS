@@ -3,7 +3,7 @@ using Unity.Entities;
 
 namespace Systems
 {
-    public class LifetimeSystem : SystemBase
+    public partial class LifetimeSystem : SystemBase
     {
         private EndSimulationEntityCommandBufferSystem _entityCommandBufferSystem;
 

@@ -5,7 +5,7 @@ using Unity.Transforms;
 
 namespace Systems
 {
-    public class MoveToDestinationSystem : SystemBase
+    public partial class MoveToDestinationSystem : SystemBase
     {
         protected override void OnUpdate()
         {

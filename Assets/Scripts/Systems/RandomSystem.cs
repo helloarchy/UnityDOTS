@@ -9,7 +9,8 @@ namespace Systems
      * Include array of random number generators as part of the initialisation group
      */
     [UpdateInGroup(typeof(InitializationSystemGroup))]
-    public class RandomSystem : SystemBase
+    // ReSharper disable once PartialTypeWithSinglePart
+    public partial class RandomSystem : SystemBase
     {
         public NativeArray<Random> RandomArray { get; private set; }
 
@@ -22,7 +23,7 @@ namespace Systems
             // Initialise using seed for different randomness
             var randomArray = new Random[availableThreads];
             for (var i = 0; i < availableThreads; i++)
-                randomArray[i] = new Random((uint) seed.Next());
+                randomArray[i] = new Random((uint)seed.Next());
 
             RandomArray = new NativeArray<Random>(randomArray, Allocator.Persistent);
         }

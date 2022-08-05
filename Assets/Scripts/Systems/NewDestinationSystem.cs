@@ -5,7 +5,7 @@ using Unity.Transforms;
 
 namespace Systems
 {
-    public class NewDestinationSystem : SystemBase
+    public partial class NewDestinationSystem : SystemBase
     {
         private RandomSystem _randomSystem;
 
